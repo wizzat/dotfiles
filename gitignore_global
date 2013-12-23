@@ -1,0 +1,7 @@
+*.swp
+*.swo
+*.pyc
+*.class
+tags
+.DS_Store
+.DS_Store?

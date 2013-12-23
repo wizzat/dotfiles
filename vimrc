@@ -1,34 +1,20 @@
-" Setting up Vundle - the vim plugin bundler
-"    let iCanHazVundle=1
-"    let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
-"    if !filereadable(vundle_readme)
-"        echo "Installing Vundle.."
-"        echo ""
-"        silent !mkdir -p ~/.vim/bundle
-"        silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
-"        let iCanHazVundle=0
-"    endif
-"
-"    set rtp+=~/.vim/bundle/vundle/
-"    call vundle#rc()
-"    Bundle 'gmarik/vundle'
-"    "Add your bundles here
-"    Bundle 'Align'
-"    Bundle 'Syntastic'
-"    Bundle 'Solarized'
-"    Bundle 'Valloric/YouCompleteMe'
-"    "...All your other bundles...
-"    if iCanHazVundle == 0
-"        echo "Installing Bundles, please ignore key map error messages"
-"        echo ""
-"        :BundleInstall
-"    endif
-" Setting up Vundle - the vim plugin bundler end
-"
+" Setting up Vundle - the vim plugin bundler.  Auto installs itself!
+let iCanHazVundle=1
+let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
+if !filereadable(vundle_readme)
+    echo "Installing Vundle.."
+    echo ""
+    silent !mkdir -p ~/.vim/bundle
+    silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+    let iCanHazVundle=0
+endif
+
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
+
 Bundle 'gmarik/vundle'
 "Add your bundles here
+
 Bundle 'bufexplorer.zip'
 Bundle 'Align'
 Bundle 'Solarized'
@@ -36,15 +22,25 @@ Bundle 'scrooloose/syntastic'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'vim-scripts/VisIncr'
 Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'tpope/vim-fugitive'
+Bundle 'godlygeek/tabular'
 
-" pep8 hates me
+"...All your other bundles...
+if iCanHazVundle == 0
+    echo "Installing Bundles, please ignore key map error messages"
+    echo ""
+    :BundleInstall
+endif
+" Setting up Vundle - the vim plugin bundler end
+
+" pep8 hates me and the Align/Tabular plugin
 let g:syntastic_python_checkers=[]
 
-colorscheme elflord
-syntax on
-com! E edit
-com! W write
-filetype plugin indent on
+colorscheme elflord       " Personal preference
+syntax on                 " Syntax highlight support
+com! E edit               " Typo support
+com! W write              " Typo support
+filetype plugin indent on " use filetype specific support
 
 set nocompatible        " No, don't use vi mode
 set number              " Line numbers on the screen
@@ -54,7 +50,7 @@ set history=50          " (hi) keep 50 lines of command line history
 set hlsearch            " Highlight my current search term
 set incsearch           " Start searching while I type
 set mouse=a             " Use the mouse on the terminal
-set pastetoggle=<F12>   " Toggle !paste with a key press
+set pastetoggle=<F12>   " Toggle !paste with a key press - mostly so that autoindent doesn't interfere
 set ruler               " (ru) show the cursor position all the time
 set showcmd             " 
 set showmatch           " Do paren matching as I move over them
@@ -65,13 +61,12 @@ set wrap                " But do continue long lines on the next line
 set vb t_vb=            " No bells
 set viminfo='20,\"50,%  " (vi) read/write a .viminfo file, don't store more than 50 lines of registers
 set autoindent          " Indent is for the win
-set ts=8                " Tabs and I don't get along, so make them really obvious
+set ts=8                " Tabs and I don't get along, so make them obviously huge
 set softtabstop=4       " use soft tabs are 4 spaces
 set shiftwidth=4        " use soft tabs are 4 spaces
 set expandtab           " use soft tabs are 4 spaces
 set scrolloff=5         " Syntax highlighting reset
 set autoread            " Reload files that have changed
-source /usr/share/vim/vim73/macros/matchit.vim " This is probably unnecessary now
 
 autocmd BufEnter,BufRead,BufNewFile *       lcd %:p:h                                " Always chdir to the current directory with a file.  Helps with relative paths
 autocmd BufEnter,BufRead,BufNewFile *       syntax sync fromstart                    " Syntax highlight from the beginning of a file (helps with long string blocks)
@@ -100,8 +95,8 @@ map ,as :Align! =W \<AS\><CR>
 map ,a  :!~/work/shell/tableize.pl<CR>,wt<CR>
 
 " Aligns on equal signs (useful for making pep8 mad at you)
-map ,a= :Align! =W =+<CR>
-map ,a=f :Align! =W [><=~+-]\+<CR>
+map ,a= :Align! =W =\+<CR>
+"map ,a=f :Align! =W [><=~+-]\+<CR>
 
 "Aligns on colons (useful for dictionaries)
 map ,a: :Align! =W [:]\+<CR>
@@ -113,8 +108,15 @@ vnoremap ,' <ESC>`>a'<ESC>`<i'<ESC>
 vnoremap ,{ <ESC>`>a}<ESC>`<i{<ESC>
 vnoremap ,[ <ESC>`>a]<ESC>`<i[<ESC>
 
-" Modify python autoindent to be less annoying.
+" Modify python filetype autoindent to be less annoying.
 let g:pyindent_open_paren        = '&sw'
 let g:pyindent_nested_paren      = '&sw'
 let g:pyindent_continue          = '&sw'
 let python_space_error_highlight = 1
+
+" Make Eclim and YouCompleteMe play nice
+let g:EclimCompletionMethod = 'omnifunc'
+
+" Find and display overly long lines
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%121v.\+/

@@ -1,0 +1,8 @@
+[user]
+    name=Mark Roberts
+    email=wizzat@gmail.com
+[color]
+    ui=auto
+    interactive=auto
+[core]
+    excludesfile=/Users/markroberts/work/dotfiles/gitignore_global
