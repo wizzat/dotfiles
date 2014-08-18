@@ -90,6 +90,7 @@ map ,wt :perldo s/\s+$//g<CR>:perldo s/\t/    /g<CR>
 " Formats a SQL block and capitalizes certain things
 map ,fs :!~/work/shell/format_sql_block.pl<CR>
 map ,as :Align! =W \<AS\><CR>
+map ,q :!~/work/shell/quote.pl<CR>
 
 " Executs github.com/wizzat/shell/tableize.pl to format tables of data
 map ,a  :!~/work/shell/tableize.pl<CR>,wt<CR>
