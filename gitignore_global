@@ -7,4 +7,16 @@ tags
 .DS_Store?
 .coverage
 .tox
+.ackrc
 MANIFEST
+
+# Fuck you Kafka, fuck you.  Seriously, you can't put this shit in your gitignore?
+.gradle/
+clients/build/
+contrib/build/
+contrib/hadoop-consumer/build/
+contrib/hadoop-producer/build/
+core/build/
+core/data/
+examples/build/
+perf/build/
