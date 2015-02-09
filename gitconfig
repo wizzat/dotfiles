@@ -5,4 +5,4 @@
     ui=auto
     interactive=auto
 [core]
-    excludesfile=/Users/markroberts/work/dotfiles/gitignore_global
+    excludesfile=~/work/dotfiles/gitignore_global
