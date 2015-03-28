@@ -24,6 +24,7 @@ Bundle 'vim-scripts/VisIncr'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'tpope/vim-fugitive'
 Bundle 'godlygeek/tabular'
+Bundle 'solarnz/thrift.vim'
 
 "...All your other bundles...
 if iCanHazVundle == 0

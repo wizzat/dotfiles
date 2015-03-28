@@ -21,6 +21,9 @@ alias rm='rm -i'
 alias vim="vim --servername $VIMSERVER --remote"
 
 export PS1="\\W \$ "
+if [[ "x$DISPLAY" == "x" ]]; then
+    export DISPLAY=:0
+fi
 
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 fortune
