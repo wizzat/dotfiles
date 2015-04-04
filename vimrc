@@ -73,6 +73,7 @@ autocmd BufEnter,BufRead,BufNewFile *       lcd %:p:h                           
 autocmd BufEnter,BufRead,BufNewFile *       syntax sync fromstart                    " Syntax highlight from the beginning of a file (helps with long string blocks)
 autocmd BufEnter,BufRead,BufNewFile *       set softtabstop=4 shiftwidth=4 expandtab " Setup 4 space soft tabs no matter what
 autocmd BufEnter,BufRead,BufNewFile *.scala set filetype=scala                       " Set filetype scala for all scala files
+autocmd BufEnter,BufRead,BufNewFile *.thrift set filetype=thrift                     " Set filetype thrift for all thrift files
 
 " Auto complete
 if has("autocmd") && exists("+omnifunc")            
@@ -121,4 +122,4 @@ let g:EclimCompletionMethod = 'omnifunc'
 
 " Find and display overly long lines
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%121v.\+/
+match OverLength /\%181v.\+/
