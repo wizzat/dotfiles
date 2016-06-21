@@ -68,6 +68,10 @@ set shiftwidth=4        " use soft tabs are 4 spaces
 set expandtab           " use soft tabs are 4 spaces
 set scrolloff=5         " Syntax highlighting reset
 set autoread            " Reload files that have changed
+set noundofile          " Stop making .foo.un~ files
+set nobackup            " Stop writing .foo~ files
+set nowritebackup       " Stop writing .foo~ files
+
 
 autocmd BufEnter,BufRead,BufNewFile *       lcd %:p:h                                " Always chdir to the current directory with a file.  Helps with relative paths
 autocmd BufEnter,BufRead,BufNewFile *       syntax sync fromstart                    " Syntax highlight from the beginning of a file (helps with long string blocks)

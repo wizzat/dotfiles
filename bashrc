@@ -25,5 +25,5 @@ if [[ "x$DISPLAY" == "x" ]]; then
     export DISPLAY=:0
 fi
 
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-fortune
+if command -v pyenv 2>&1 > /dev/null; then eval "$(pyenv init -)"; fi
+if command -v fortune 2>&1 > /dev/null; then fortune; fi
