@@ -6,6 +6,8 @@ function replace {
     fi
 }
 
+(cd ~/work && git clone https://github.com/wizzat/shell.git)
+
 replace ~/work/dotfiles/gitignore_global ~/.gitignore_global
 replace ~/work/dotfiles/gitconfig ~/.gitconfig
 replace ~/work/dotfiles/ackrc ~/.ackrc
