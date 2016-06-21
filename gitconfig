@@ -5,4 +5,5 @@
     ui=auto
     interactive=auto
 [core]
+    editor=vim
     excludesfile=~/work/dotfiles/gitignore_global
