@@ -53,7 +53,7 @@ set incsearch           " Start searching while I type
 set mouse=a             " Use the mouse on the terminal
 set pastetoggle=<F12>   " Toggle !paste with a key press - mostly so that autoindent doesn't interfere
 set ruler               " (ru) show the cursor position all the time
-set showcmd             " 
+set showcmd             " Show the last command run in the ruler
 set showmatch           " Do paren matching as I move over them
 set laststatus=2        " I always want a status line
 set statusline=[%n]\ %F\ %(\ %M%R%H)%)\ \@(%l\,%c%V)\ %P
