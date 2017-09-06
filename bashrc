@@ -37,11 +37,19 @@ export PAGER='less -R'
 export VIMSERVER='vim'
 export PYENV_ROOT=~/.pyenv
 
+export PATH=/usr/local/bin:$PATH
 export PATH=~/work/shell:$PATH
 export PATH=~/bin:$PATH
 export PATH=~/.local/bin:$PATH
 alias vim='NVIM_LISTEN_ADDRESS=/tmp/nvimsocket nvim'
 
+alias testdb='psql -U pyutil -d pyutil_testdb -h localhost'
+
+alias s3ls='s3cmd ls'
+alias ls='ls --color'
+alias ll='ls -Glah'
+alias rm='rm -i'
+alias vim="vim --servername $VIMSERVER --remote"
 
 export PS1="\\W \$ "
 if [[ "x$DISPLAY" == "x" ]]; then
