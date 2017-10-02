@@ -41,7 +41,7 @@ export PATH=/usr/local/bin:$PATH
 export PATH=~/work/shell:$PATH
 export PATH=~/bin:$PATH
 export PATH=~/.local/bin:$PATH
-alias vim='NVIM_LISTEN_ADDRESS=/tmp/nvimsocket nvim'
+export NVIM_LISTEN_ADDRESS='/tmp/nvimsocket'
 
 alias testdb='psql -U pyutil -d pyutil_testdb -h localhost'
 
