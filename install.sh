@@ -15,3 +15,6 @@ replace ~/work/dotfiles/psqlrc ~/.psqlrc
 replace ~/work/dotfiles/config ~/.config
 replace ~/work/dotfiles/screenrc ~/.screenrc
 replace ~/work/dotfiles/vimrc ~/.vimrc
+
+mkdir -p ~/.config/nvim/init.vim
+replace ~/work/dotfiles/init.vim ~/.config/nvim/init.vim

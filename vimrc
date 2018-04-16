@@ -91,7 +91,7 @@ endif
 set complete=.,w,b,u,k
 
 " Kills wailing tritespace
-map ,wt :perldo s/\s+$//g<CR>:perldo s/\t/    /g<CR>
+map ,wt :!~/work/shell/wailing_tritespace.py<CR>
 
 " Formats a SQL block and capitalizes certain things
 map ,fs :!~/work/shell/format_sql_block.pl<CR>
