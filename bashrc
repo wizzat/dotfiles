@@ -49,7 +49,6 @@ alias s3ls='s3cmd ls'
 alias ls='ls --color'
 alias ll='ls -Glah'
 alias rm='rm -i'
-alias vim="vim --servername $VIMSERVER --remote"
 
 export PS1="\\W \$ "
 if [[ "x$DISPLAY" == "x" ]]; then

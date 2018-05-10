@@ -16,5 +16,5 @@ replace ~/work/dotfiles/config ~/.config
 replace ~/work/dotfiles/screenrc ~/.screenrc
 replace ~/work/dotfiles/vimrc ~/.vimrc
 
-mkdir -p ~/.config/nvim/init.vim
+mkdir -p ~/.config/nvim
 replace ~/work/dotfiles/init.vim ~/.config/nvim/init.vim
