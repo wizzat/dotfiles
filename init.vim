@@ -13,15 +13,16 @@
     " Required:
     call plug#begin()
   endif
+
 "}}}
 
 call plug#begin('~/.config/nvim/plugged')
 
-Plug 'bufexplorer.zip'                                        " Make \be open a list of buffers
-Plug 'Align'                                                  " Annoy PEP8 zealots
-Plug 'vim-scripts/VisIncr'                                    " ^v<motion>II to increment columns of numbers
-Plug 'nathanaelkane/vim-indent-guides'                        " Changes background colors for indent levels. Useful in Python
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all' } " Autocomplete and syntax checking
+Plug 'vim-scripts/bufexplorer.zip'     " Make \be open a list of buffers
+Plug 'vim-scripts/Align'               " Annoy PEP8 zealots
+Plug 'vim-scripts/VisIncr'             " ^v<motion>II to increment columns of numbers
+Plug 'nathanaelkane/vim-indent-guides' " Changes background colors for indent levels. Useful in Python
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --go-completer --js-completer --rust-completer --java-completer --clang-completer' } " Autocomplete and syntax checking
 
 call plug#end()
 
