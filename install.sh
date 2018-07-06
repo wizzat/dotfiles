@@ -18,6 +18,7 @@ replace ~/work/dotfiles/vimrc ~/.vimrc
 
 mkdir -p ~/.config/nvim
 replace ~/work/dotfiles/init.vim ~/.config/nvim/init.vim
+replace ~/work/dotfiles/config/pep8 ~/.config/pep8
 
 echo <<HERE
 An ubuntu setup generally requires:

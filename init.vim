@@ -30,6 +30,8 @@ com! E edit               " Typo support
 com! W write              " Typo support
 
 " Behavior
+set nocompatible        " Something is behaving poorly
+set mouse=a             " Turn on the mouse. I don't know.
 set number              " Line numbers on the screen
 set hidden              " Bufexlorer stops whining about the current file being unsaved
 set pastetoggle=<F12>   " Toggle !paste with a key press - mostly so that autoindent doesn't interfere
